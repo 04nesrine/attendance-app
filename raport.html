@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Université d'Alger 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="logo.jpeg">
+    <script src="https://kit.fontawesome.com/1a892f7f47.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="raport.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="nav-ul">
+                    <li class="link"><a href="home.html">Home</a></li>
+                    <li class="link"><a href="attendance.html">Attendance List</a></li>
+                    <li class="link"><a href="add.html">Add Student</a></li>
+                    <li class="link"><a href="raport.html">Reports</a></li>
+                    <li class="link"><a href="#">Log-out</a></li>
+                </ul>
+            </nav>        
+        </div>          
+    </header>
+
+        <form class="FORM">
+             <fieldset class="reclamation">
+                            <legend><h2>Type de Reclamation</h2></legend><br>
+                            <div class="categ"> 
+                                <label for="categorie">Categorie de Reclamation:</label><br><br>
+                                <select id="categorie"> 
+                                    <option value="a">Choisir une categorie</option>
+                                    <option value="a">Logement</option>
+                                    <option value="a">Inscription</option>
+                                    <option value="a">Services</option>
+                                    <option value="a">Cours</option>
+                                    <option value="a">Autre</option>
+                                </select>
+                            </div>
+                            <div class="descrip">
+                                <label for="detaille">Description de la Reclamation :</label><br><br>
+                                <textarea id="detaille" rows="11" cols="60"></textarea>
+                            </div>
+                        </fieldset><br><br>
+
+                        <div class="piece">
+                            <label for="pieces_jointes">Pieces jointes :</label>
+                            <input type="file" id="pieces_jointes" name="pieces_jointes"><br><br>
+                        </div>
+                        <div class="Actions">
+                            <label>souhaitées :</label><br><br>
+                            <input type="checkbox" id="suivi" value="suivi">
+                            <label for="suivi">Suivi de la reclamation</label><br>
+                            <input type="checkbox" id="Reponse_email" value="suivi">
+                            <label for="Reponse_email">Reponse pa email</label><br>
+                            <input type="checkbox" id="Rendez-vous" value="suivi">
+                            <label for="Rendez-vous">Rendez-vous avec le responsable</label><br><br>
+                        </div>
+                    </fieldset>
+            <input type="submit" value="valider">
+        </form>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Réseaux Sociaux</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+
+</body>

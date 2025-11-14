@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Université d'Alger 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="logo.jpeg">
+    <script src="https://kit.fontawesome.com/1a892f7f47.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="add.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="nav-ul">
+                    <li class="link"><a href="home.html">Home</a></li>
+                    <li class="link"><a href="attendance.html">Attendance List</a></li>
+                    <li class="link"><a href="add.html">Add Student</a></li>
+                    <li class="link"><a href="raport.html">Reports</a></li>
+                    <li class="link"><a href="#">Log-out</a></li>
+                </ul>
+            </nav>        
+        </div>          
+    </header>
+
+        <form class="FORM">
+            <fieldset class="ADD">
+                <legend><h2>ADD STUDENT:</h2></legend>
+                    <span class="icon"><i class="fas fa-key"></i></span>
+                    <input type="password" placeholder="Num.d'Inscription" name="matricule"><br><br>
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" placeholder="Last name" name="nom"><br><br>
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <input type="text" placeholder="First name" name="nom"><br><br>
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <input type="email" placeholder="....@gamil.com" name="mail"><br><br>
+            </fieldset>
+            <input type="submit" value="valider">
+        </form>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Réseaux Sociaux</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+ <!-- ajouter au <head> : none needed -->
+<!-- coller juste avant </body> -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".FORM");
+  if (!form) return;
+
+  const inputMat = form.querySelector('input[name="matricule"]');
+  const noms = form.querySelectorAll('input[name="nom"]');
+  const inputLast = noms[0];
+  const inputFirst = noms[1];
+  const inputEmail = form.querySelector('input[name="mail"]');
+
+  // create error nodes
+  function ensureErr(input){
+    if(!input) return null;
+    let e = input.nextElementSibling;
+    if(e && e.classList && e.classList.contains("error-msg")) return e;
+    e = document.createElement("div");
+    e.className = "error-msg";
+    e.style.color = "red";
+    e.style.fontSize = "13px";
+    e.style.marginTop = "4px";
+    input.insertAdjacentElement("afterend", e);
+    return e;
+  }
+  const errMat = ensureErr(inputMat);
+  const errLast = ensureErr(inputLast);
+  const errFirst = ensureErr(inputFirst);
+  const errEmail = ensureErr(inputEmail);
+
+  const reNum = /^[0-9]+$/;
+  const reLetters = /^[A-Za-zÀ-ÿ'\-\s]+$/;
+  const reEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function validateAll(){
+    let ok = true;
+    const mat = inputMat.value.trim();
+    const last = inputLast.value.trim();
+    const first = inputFirst.value.trim();
+    const mail = inputEmail.value.trim();
+
+    if(!mat){ errMat.textContent = "Student ID required."; ok = false; }
+    else if(!reNum.test(mat)){ errMat.textContent = "Student ID must be numbers only."; ok = false; }
+    else errMat.textContent = "";
+
+    if(!last){ errLast.textContent = "Last name required."; ok = false; }
+    else if(!reLetters.test(last)){ errLast.textContent = "Last name: letters only."; ok = false; }
+    else errLast.textContent = "";
+
+    if(!first){ errFirst.textContent = "First name required."; ok = false; }
+    else if(!reLetters.test(first)){ errFirst.textContent = "First name: letters only."; ok = false; }
+    else errFirst.textContent = "";
+
+    if(!mail){ errEmail.textContent = "Email required."; ok = false; }
+    else if(!reEmail.test(mail)){ errEmail.textContent = "Invalid email format."; ok = false; }
+    else errEmail.textContent = "";
+
+    return ok;
+  }
+
+  // live validation
+  [[inputMat, reNum, errMat], [inputLast, reLetters, errLast], [inputFirst, reLetters, errFirst], [inputEmail, reEmail, errEmail]]
+    .forEach(([input, re, err])=>{
+      if(!input) return;
+      input.addEventListener("input", () => {
+        if(input.value.trim() === "") { err.textContent = ""; input.classList.remove("invalid"); return; }
+        if(re.test(input.value.trim())){ err.textContent=""; input.classList.remove("invalid"); input.classList.add("valid"); }
+        else { err.textContent = err.textContent || "Invalid"; input.classList.add("invalid"); }
+      });
+    });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if(!validateAll()) {
+      const firstInvalid = form.querySelector(".invalid");
+      if(firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    const student = {
+      id: inputMat.value.trim(),
+      lastName: inputLast.value.trim(),
+      firstName: inputFirst.value.trim(),
+      email: inputEmail.value.trim()
+    };
+
+    // push to localStorage array
+    const arr = JSON.parse(localStorage.getItem("students") || "[]");
+    arr.push(student);
+    localStorage.setItem("students", JSON.stringify(arr));
+
+    // dispatch a storage event manually for same-tab listeners (optional)
+    try {
+      window.dispatchEvent(new Event('studentsUpdated')); // custom event
+    } catch(e){}
+
+    // confirmation message
+    const msg = document.createElement("div");
+    msg.textContent = `✅ Student ${student.firstName} ${student.lastName} added successfully.`;
+    msg.style.color = "green";
+    msg.style.fontWeight = "600";
+    msg.style.marginTop = "10px";
+    form.insertAdjacentElement("afterend", msg);
+    setTimeout(()=> msg.remove(), 3000);
+
+    form.reset();
+  });
+
+});
+</script>
+
+<script>
+// Fonction pour supprimer un étudiant depuis localStorage
+function removeStudentById(id) {
+    let students = JSON.parse(localStorage.getItem("students") || "[]");
+
+    // filtre -> enlève celui qui a ce matricule
+    const newList = students.filter(s => s.id !== id);
+
+    localStorage.setItem("students", JSON.stringify(newList));
+
+    alert("Étudiant supprimé avec succès !");
+}
+</script>
+
+
+</body>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Université d'Alger 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="logo.jpeg">
+    <script src="https://kit.fontawesome.com/1a892f7f47.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="attendance.css">
+    <!-- dans <head> ou juste avant le script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="nav-ul">
+                    <li class="link"><a href="home.html">Home</a></li>
+                    <li class="link"><a href="attendance.html">Attendance List</a></li>
+                    <li class="link"><a href="add.html">Add Student</a></li>
+                    <li class="link"><a href="raport.html">Reports</a></li>
+                    <li class="link"><a href="#">Log-out</a></li>
+                </ul>
+            </nav>        
+        </div>          
+    </header>
+
+     <h2>-STUDENT ATTENDANCE-</h2>
+        <!-- Boutons et section rapport (mettre où tu veux sur la page attendance.html) -->
+<div style="text-align:center; margin:12px 0;">
+  <button id="showReport">Show Report</button>
+  <button id="highlightExcellent">Highlight Excellent Students</button>
+  <button id="resetColors">Reset Colors</button>
+</div>
+
+<section id="reportSection" style="display:none; margin: 16px auto; width:90%; max-width:800px; background:#fff; padding:12px; border-radius:8px;">
+  <div id="reportSummary"></div>
+  <canvas id="reportChart" width="400" height="200"></canvas>
+</section>
+
+        <table class="Attendance">
+            <thead>
+                <tr>
+                    <th rowspan="2">Student ID</th>
+                    <th rowspan="2">Last name</th>
+                    <th rowspan="2">First name</th>
+                    <th rowspan="2">Course</th>
+                    <th colspan="2">S1</th>
+                    <th colspan="2">S2</th>
+                    <th colspan="2">S3</th>
+                    <th colspan="2">S4</th>
+                    <th colspan="2">S5</th>
+                    <th colspan="2">S6</th>
+                    <th rowspan="2">Abscences</th>
+                    <th rowspan="2">Participation</th>
+                </tr>
+                <tr>
+                    <th>Present</th>
+                    <th>Partipated</th>
+                    <th>Present</th>
+                    <th>Partipated</th>
+                    <th>Present</th>
+                    <th>Partipated</th>
+                    <th>Present</th>
+                    <th>Partipated</th>
+                    <th>Present</th>
+                    <th>Partipated</th>
+                    <th>Present</th>
+                    <th>Partipated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>31094731</td>
+                  <td>Oudina</td>
+                  <td>Aya nesrine</td>
+                  <td>PAW</td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>31094731</td>
+                  <td>Oudina</td>
+                  <td>Aya nesrine</td>
+                  <td>PAW</td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>31094731</td>
+                  <td>Oudina</td>
+                  <td>Aya nesrine</td>
+                  <td>PAW</td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>31094731</td>
+                  <td>Oudina</td>
+                  <td>Aya nesrine</td>
+                  <td>PAW</td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td class="check"><input type="checkbox"></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <h3>Liens Utiles</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Réseaux Sociaux</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+   
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const tbody = document.querySelector(".Attendance tbody");
+  if(!tbody) return;
+
+  // --- utilitaire escape
+  function escapeHtml(txt){ return String(txt||'').replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  // --- crée une ligne identique aux existantes (sans email)
+  function createRow(student){
+    const tr = document.createElement("tr");
+    let html = `
+      <td>${escapeHtml(student.id)}</td>
+      <td>${escapeHtml(student.lastName)}</td>
+      <td>${escapeHtml(student.firstName)}</td>
+      <td>${escapeHtml(student.course || 'PAW')}</td>
+    `;
+    // 6 sessions × 2 colonnes = 12 checkboxes
+    for(let i=0;i<12;i++) html += `<td class="check"><input type="checkbox"></td>`;
+    // placeholders pour absences, participation et message (trois dernières colonnes)
+    html += `<td></td><td></td><td class="message"></td>`;
+    tr.innerHTML = html;
+    attachCheckboxListeners(tr);
+    updateRow(tr); // applique calcul initial (0 abs, 0 par)
+    return tr;
+  }
+
+  // --- updateRow : calcule absences, participations, couleur, message
+  function updateRow(row){
+    const checkboxes = Array.from(row.querySelectorAll('input[type="checkbox"]'));
+    if(checkboxes.length === 0) return;
+    let present = 0, participated = 0;
+    checkboxes.forEach((cb,i)=> { if(cb.checked){ if(i%2===0) present++; else participated++; }});
+    const sessions = Math.ceil(checkboxes.length/2);
+    const absences = Math.max(0, sessions - present);
+
+    // les 3 dernières cellules du row sont abs, participation, message
+    const absCell = row.cells[row.cells.length - 3];
+    const partCell = row.cells[row.cells.length - 2];
+    const msgCell = row.cells[row.cells.length - 1];
+
+    absCell.textContent = absences;
+    partCell.textContent = participated;
+
+    // couleurs
+    if(absences < 3) row.style.backgroundColor = 'lightgreen';
+    else if(absences >=3 && absences <=4) row.style.backgroundColor = 'khaki';
+    else row.style.backgroundColor = 'tomato';
+
+    // message
+    if(absences < 3 && participated >= Math.min(4,sessions)) msgCell.textContent = 'Good attendance – Excellent participation';
+    else if(absences >=3 && absences <=4) msgCell.textContent = 'Warning – attendance low – You need to participate more';
+    else msgCell.textContent = 'Excluded – too many absences – You need to participate more';
+  }
+
+  // --- attacher listeners checkboxes d'une ligne
+  function attachCheckboxListeners(row){
+    row.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
+      cb.removeEventListener('change', onCheckboxChange);
+      cb.addEventListener('change', onCheckboxChange);
+    });
+  }
+  function onCheckboxChange(e){
+    const row = e.target.closest('tr');
+    if(row) updateRow(row);
+  }
+
+  // --- charger les étudiants stockés
+  function loadStored(){
+    const arr = JSON.parse(localStorage.getItem("students") || "[]");
+    arr.forEach(s=>{
+      // si on a déjà une ligne avec même id et same name -> éviter doublon
+      const exists = Array.from(tbody.rows).some(r => r.cells[0] && r.cells[0].textContent === s.id && r.cells[1].textContent === s.lastName && r.cells[2].textContent === s.firstName);
+      if(!exists){
+        const r = createRow(s);
+        tbody.appendChild(r);
+      }
+    });
+    // init existing static rows (from HTML) as well
+    Array.from(tbody.rows).forEach(r=>{
+      if(r.querySelector('input[type="checkbox"]')) { attachCheckboxListeners(r); updateRow(r); }
+    });
+  }
+
+  // load on start
+  loadStored();
+
+  // --- Ecouter modification de localStorage provenant d'une autre page (add.html)
+  window.addEventListener('storage', (ev) => {
+    if(ev.key === 'students') loadStored();
+  });
+  // custom event for same-tab adds
+  window.addEventListener('studentsUpdated', () => loadStored());
+
+  // --- Form submit listener (Option: si add form est sur la même page)
+  const form = document.querySelector('.FORM');
+  if(form){
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const id = form.querySelector('input[name="matricule"]').value.trim();
+      const names = form.querySelectorAll('input[name="nom"]');
+      const last = (names[0]?.value || '').trim();
+      const first = (names[1]?.value || '').trim();
+      if(!id || !last || !first){ alert('Fill ID, last and first name'); return; }
+      const student = { id, lastName: last, firstName: first, course: 'PAW' };
+      // add to table and localStorage
+      const r = createRow(student);
+      tbody.appendChild(r);
+      const arr = JSON.parse(localStorage.getItem("students") || "[]"); arr.push(student); localStorage.setItem("students", JSON.stringify(arr));
+      // confirmation
+      const msg = document.createElement('div'); msg.textContent = `✅ ${first} ${last} added`; msg.style.color='green'; msg.style.marginTop='8px'; form.insertAdjacentElement('afterend', msg); setTimeout(()=>msg.remove(),3000);
+      form.reset();
+    });
+  }
+
+  // -------------------- EXERCISE 4 : Show Report & Chart --------------------
+  // ajouter au HTML : <button id="showReport">Show Report</button>
+  // et <section id="reportSection" style="display:none"><div id="reportSummary"></div><canvas id="reportChart"></canvas></section>
+  const showBtn = document.getElementById('showReport');
+  const reportSection = document.getElementById('reportSection');
+  const reportSummary = document.getElementById('reportSummary');
+  const chartCanvas = document.getElementById('reportChart');
+  let reportChart = null;
+
+  function computeReport(){
+    const rows = Array.from(tbody.rows);
+    const totalStudents = rows.length;
+    // count students with at least one present box (consider present if presentCount>0)
+    let presentStudents = 0;
+    let participatedCount = 0; // total number of participation marks (or could be number of students who participated at least once)
+    rows.forEach(r=>{
+      const checkboxes = Array.from(r.querySelectorAll('input[type="checkbox"]'));
+      if(checkboxes.length===0) return;
+      // present count per row
+      let present = 0; let participated = 0;
+      checkboxes.forEach((cb,i)=>{ if(cb.checked){ if(i%2===0) present++; else participated++; }});
+      if(present>0) presentStudents++;
+      participatedCount += participated; // total participations
+    });
+    return { totalStudents, presentStudents, participatedCount };
+  }
+
+  function showReport(){
+    const data = computeReport();
+    if(reportSummary) reportSummary.innerHTML = `
+      <p><strong>Total students:</strong> ${data.totalStudents}</p>
+      <p><strong>Students marked present (at least 1 session):</strong> ${data.presentStudents}</p>
+      <p><strong>Total participation marks:</strong> ${data.participatedCount}</p>
+    `;
+    // draw chart: pie chart distribution present vs not present
+    const notPresent = data.totalStudents - data.presentStudents;
+    const chartData = { labels: ['Present (≥1)', 'Not present'], datasets: [{ data: [data.presentStudents, notPresent], backgroundColor: ['#36a2eb','#ffcd56'] }] };
+    if(reportChart) reportChart.destroy();
+    if(chartCanvas){
+      reportChart = new Chart(chartCanvas, { type: 'pie', data: chartData, options: { responsive: true } });
+    }
+    if(reportSection) reportSection.style.display = 'block';
+  }
+
+  if(showBtn) showBtn.addEventListener('click', showReport);
+
+  // -------------------- EXERCISE 5 : jQuery hover + click --------------------
+  // Requires jQuery loaded on the page.
+  if(window.jQuery){
+    const $ = window.jQuery;
+    // highlight row on hover
+    $(tbody).on('mouseenter','tr', function(){ $(this).data('origBg', this.style.backgroundColor || ''); $(this).css('box-shadow','0 0 8px rgba(0,0,0,0.15)'); });
+    $(tbody).on('mouseleave','tr', function(){ $(this).css('box-shadow',''); $(this).css('background-color', $(this).data('origBg') || ''); });
+    // click row -> alert full name + absences
+    $(tbody).on('click','tr', function(e){
+      // avoid clicks when clicking on checkbox
+      if($(e.target).is('input')) return;
+      const name = $(this).find('td').eq(1).text() + ' ' + $(this).find('td').eq(2).text();
+      const abs = $(this).find('td').eq($(this).find('td').length - 3).text();
+      alert(`Student: ${name}\nAbsences: ${abs || '0'}`);
+    });
+  }
+
+  // -------------------- EXERCISE 6 : Highlight Excellent Students & Reset --------------------
+  // Buttons in HTML: <button id="highlightExcellent">Highlight Excellent Students</button> <button id="resetColors">Reset Colors</button>
+  const btnHighlight = document.getElementById('highlightExcellent');
+  const btnReset = document.getElementById('resetColors');
+
+  function highlightExcellent(){
+    const rows = Array.from(tbody.rows);
+    rows.forEach((r, idx)=>{
+      const absText = r.cells[r.cells.length - 3]?.textContent;
+      const abs = absText ? parseInt(absText,10) : 0;
+      if(abs < 3){
+        // animate using jQuery if present, else simple CSS pulse
+        if(window.jQuery){
+          $(r).fadeTo(300, 0.4).fadeTo(300, 1.0).fadeTo(300, 0.4).fadeTo(300,1.0);
+        } else {
+          r.style.transition = 'background-color 0.6s ease';
+          r.style.backgroundColor = '#b3ffb3';
+          setTimeout(()=> { r.style.backgroundColor = ''; }, 1200);
+        }
+      }
+    });
+  }
+  function resetColors(){
+    Array.from(tbody.rows).forEach(r => r.style.backgroundColor = '');
+    // re-run update to set colors again according to absences
+    Array.from(tbody.rows).forEach(r=> updateRow(r));
+  }
+
+  if(btnHighlight) btnHighlight.addEventListener('click', highlightExcellent);
+  if(btnReset) btnReset.addEventListener('click', resetColors);
+
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    function deleteStudent(id, row) {
+        let students = JSON.parse(localStorage.getItem("students") || "[]");
+        students = students.filter(s => s.id !== id);
+        localStorage.setItem("students", JSON.stringify(students));
+
+        row.remove(); // supprime la ligne du tableau
+        alert("Student removed successfully");
+    }
+
+    // ajoute bouton delete à chaque ligne existante
+    const rows = document.querySelectorAll(".Attendance tbody tr");
+
+    rows.forEach(row => {
+        const id = row.cells[0].textContent.trim();
+        const td = document.createElement("td");
+
+        td.innerHTML = `<button class="deleteBtn">🗑️</button>`;
+        row.appendChild(td);
+
+        td.querySelector("button").onclick = () => deleteStudent(id, row);
+    });
+});
+</script>
+
+
+</body>
