@@ -31,6 +31,92 @@
     </header>
 
      <h2>-STUDENT ATTENDANCE-</h2>
+
+        <table id="attendanceTable" class="Attendance">
+    <thead>
+        <tr>
+            <th rowspan="2">Student ID</th>
+            <th rowspan="2">Last Name</th>
+            <th rowspan="2">First Name</th>
+            <th colspan="6">Attendance (S1 - S6)</th>
+            <th colspan="6">Participation (P1 - P6)</th>
+            <th rowspan="2">Absences</th>
+            <th rowspan="2">Participations</th>
+            <th rowspan="2">Message</th>
+        </tr>
+
+        <tr>
+            <th>S1</th><th>S2</th><th>S3</th><th>S4</th><th>S5</th><th>S6</th>
+            <th>P1</th><th>P2</th><th>P3</th><th>P4</th><th>P5</th><th>P6</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td>31094731</td>
+            <td>Oudina</td>
+            <td>Aya Nesrine</td>
+
+            <!-- Attendance checkboxes -->
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+
+            <!-- Participation checkboxes -->
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+
+            <td class="abs"></td>
+            <td class="part"></td>
+            <td class="msg"></td>
+        </tr>
+
+        <tr>
+            <td>31094732</td>
+            <td>Brahimi</td>
+            <td>Salim</td>
+
+            <!-- Attendance -->
+            <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+            <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+
+            <!-- Participation -->
+            <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+            <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+
+            <td class="abs"></td>
+            <td class="part"></td>
+            <td class="msg"></td>
+        </tr>
+
+        <tr>
+            <td>31094733</td>
+            <td>Khelifi</td>
+            <td>Rym</td>
+
+            <!-- Attendance -->
+            <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+            <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+
+            <!-- Participation -->
+            <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+            <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="checkbox"></td>
+
+            <td class="abs"></td>
+            <td class="part"></td>
+            <td class="msg"></td>
+        </tr>
+
+    </tbody>
+</table>
         <!-- Boutons et section rapport (mettre où tu veux sur la page attendance.html) -->
 <div style="text-align:center; margin:12px 0;">
   <button id="showReport">Show Report</button>
@@ -42,121 +128,6 @@
   <div id="reportSummary"></div>
   <canvas id="reportChart" width="400" height="200"></canvas>
 </section>
-
-        <table class="Attendance">
-            <thead>
-                <tr>
-                    <th rowspan="2">Student ID</th>
-                    <th rowspan="2">Last name</th>
-                    <th rowspan="2">First name</th>
-                    <th rowspan="2">Course</th>
-                    <th colspan="2">S1</th>
-                    <th colspan="2">S2</th>
-                    <th colspan="2">S3</th>
-                    <th colspan="2">S4</th>
-                    <th colspan="2">S5</th>
-                    <th colspan="2">S6</th>
-                    <th rowspan="2">Abscences</th>
-                    <th rowspan="2">Participation</th>
-                </tr>
-                <tr>
-                    <th>Present</th>
-                    <th>Partipated</th>
-                    <th>Present</th>
-                    <th>Partipated</th>
-                    <th>Present</th>
-                    <th>Partipated</th>
-                    <th>Present</th>
-                    <th>Partipated</th>
-                    <th>Present</th>
-                    <th>Partipated</th>
-                    <th>Present</th>
-                    <th>Partipated</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                  <td>31094731</td>
-                  <td>Oudina</td>
-                  <td>Aya nesrine</td>
-                  <td>PAW</td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>31094731</td>
-                  <td>Oudina</td>
-                  <td>Aya nesrine</td>
-                  <td>PAW</td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>31094731</td>
-                  <td>Oudina</td>
-                  <td>Aya nesrine</td>
-                  <td>PAW</td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>31094731</td>
-                  <td>Oudina</td>
-                  <td>Aya nesrine</td>
-                  <td>PAW</td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td class="check"><input type="checkbox"></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-            </tbody>
-        </table>
 
     <footer>
         <div class="footer-container">
@@ -181,217 +152,97 @@
         </div>
     </footer>
    
-    <script>
+<script>
+// ✅ Calcule absences / participations / messages pour TOUTES les lignes
+function calculateAttendance() {
+    const rows = document.querySelectorAll("#attendanceTable tbody tr");
+
+    rows.forEach(row => {
+        const checkboxes = row.querySelectorAll("input[type='checkbox']");
+        if (checkboxes.length < 12) return;
+
+        const attendance = Array.from(checkboxes).slice(0, 6);
+        const participation = Array.from(checkboxes).slice(6, 12);
+
+        const abs = 6 - attendance.filter(c => c.checked).length;
+        const part = participation.filter(c => c.checked).length;
+
+        row.querySelector(".abs").textContent = abs;
+        row.querySelector(".part").textContent = part;
+
+        // 🔵 Couleurs
+        if (abs < 3) row.style.backgroundColor = "lightgreen";
+        else if (abs <= 4) row.style.backgroundColor = "yellow";
+        else row.style.backgroundColor = "tomato";
+
+        // 🔵 Messages
+        let msg = "";
+        if (abs >= 5) msg = "Excluded – too many absences – You need to participate more";
+        else if (abs >= 3) msg = "Warning – attendance low – You need to participate more";
+        else if (part >= 4) msg = "Good attendance – Excellent participation";
+        else msg = "Good attendance – Participation acceptable";
+
+        row.querySelector(".msg").textContent = msg;
+    });
+}
+
+// ================================================
+// 1️⃣ Charger les étudiants depuis localStorage
+// ================================================
 document.addEventListener("DOMContentLoaded", () => {
-  const tbody = document.querySelector(".Attendance tbody");
-  if(!tbody) return;
+    const table = document.querySelector("#attendanceTable tbody");
+    const saved = JSON.parse(localStorage.getItem("students") || "[]");
 
-  // --- utilitaire escape
-  function escapeHtml(txt){ return String(txt||'').replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+    saved.forEach(s => addStudentToTable(s));
 
-  // --- crée une ligne identique aux existantes (sans email)
-  function createRow(student){
+    calculateAttendance(); // 🔥 Applique le script aux étudiants existants
+});
+
+// ================================================
+// 2️⃣ Fonction qui ajoute une ligne HTML
+// ================================================
+function addStudentToTable(student) {
+    const table = document.querySelector("#attendanceTable tbody");
     const tr = document.createElement("tr");
-    let html = `
-      <td>${escapeHtml(student.id)}</td>
-      <td>${escapeHtml(student.lastName)}</td>
-      <td>${escapeHtml(student.firstName)}</td>
-      <td>${escapeHtml(student.course || 'PAW')}</td>
+
+    tr.innerHTML = `
+        <td>${student.id}</td>
+        <td>${student.lastName}</td>
+        <td>${student.firstName}</td>
+
+        ${"<td><input type='checkbox'></td>".repeat(6)}
+        ${"<td><input type='checkbox'></td>".repeat(6)}
+
+        <td class='abs'></td>
+        <td class='part'></td>
+        <td class='msg'></td>
     `;
-    // 6 sessions × 2 colonnes = 12 checkboxes
-    for(let i=0;i<12;i++) html += `<td class="check"><input type="checkbox"></td>`;
-    // placeholders pour absences, participation et message (trois dernières colonnes)
-    html += `<td></td><td></td><td class="message"></td>`;
-    tr.innerHTML = html;
-    attachCheckboxListeners(tr);
-    updateRow(tr); // applique calcul initial (0 abs, 0 par)
-    return tr;
-  }
 
-  // --- updateRow : calcule absences, participations, couleur, message
-  function updateRow(row){
-    const checkboxes = Array.from(row.querySelectorAll('input[type="checkbox"]'));
-    if(checkboxes.length === 0) return;
-    let present = 0, participated = 0;
-    checkboxes.forEach((cb,i)=> { if(cb.checked){ if(i%2===0) present++; else participated++; }});
-    const sessions = Math.ceil(checkboxes.length/2);
-    const absences = Math.max(0, sessions - present);
+    table.appendChild(tr);
+}
 
-    // les 3 dernières cellules du row sont abs, participation, message
-    const absCell = row.cells[row.cells.length - 3];
-    const partCell = row.cells[row.cells.length - 2];
-    const msgCell = row.cells[row.cells.length - 1];
+// ================================================
+// 3️⃣ Quand un étudiant est ajouté dans add.html
+// ================================================
+window.addEventListener("studentsUpdated", () => {
+    const saved = JSON.parse(localStorage.getItem("students") || "[]");
+    const last = saved[saved.length - 1];
 
-    absCell.textContent = absences;
-    partCell.textContent = participated;
+    addStudentToTable(last);
+    calculateAttendance(); // 🔥 Met le message + couleur + abs pour le nouvel étudiant
+});
 
-    // couleurs
-    if(absences < 3) row.style.backgroundColor = 'lightgreen';
-    else if(absences >=3 && absences <=4) row.style.backgroundColor = 'khaki';
-    else row.style.backgroundColor = 'tomato';
-
-    // message
-    if(absences < 3 && participated >= Math.min(4,sessions)) msgCell.textContent = 'Good attendance – Excellent participation';
-    else if(absences >=3 && absences <=4) msgCell.textContent = 'Warning – attendance low – You need to participate more';
-    else msgCell.textContent = 'Excluded – too many absences – You need to participate more';
-  }
-
-  // --- attacher listeners checkboxes d'une ligne
-  function attachCheckboxListeners(row){
-    row.querySelectorAll('input[type="checkbox"]').forEach(cb=>{
-      cb.removeEventListener('change', onCheckboxChange);
-      cb.addEventListener('change', onCheckboxChange);
-    });
-  }
-  function onCheckboxChange(e){
-    const row = e.target.closest('tr');
-    if(row) updateRow(row);
-  }
-
-  // --- charger les étudiants stockés
-  function loadStored(){
-    const arr = JSON.parse(localStorage.getItem("students") || "[]");
-    arr.forEach(s=>{
-      // si on a déjà une ligne avec même id et same name -> éviter doublon
-      const exists = Array.from(tbody.rows).some(r => r.cells[0] && r.cells[0].textContent === s.id && r.cells[1].textContent === s.lastName && r.cells[2].textContent === s.firstName);
-      if(!exists){
-        const r = createRow(s);
-        tbody.appendChild(r);
-      }
-    });
-    // init existing static rows (from HTML) as well
-    Array.from(tbody.rows).forEach(r=>{
-      if(r.querySelector('input[type="checkbox"]')) { attachCheckboxListeners(r); updateRow(r); }
-    });
-  }
-
-  // load on start
-  loadStored();
-
-  // --- Ecouter modification de localStorage provenant d'une autre page (add.html)
-  window.addEventListener('storage', (ev) => {
-    if(ev.key === 'students') loadStored();
-  });
-  // custom event for same-tab adds
-  window.addEventListener('studentsUpdated', () => loadStored());
-
-  // --- Form submit listener (Option: si add form est sur la même page)
-  const form = document.querySelector('.FORM');
-  if(form){
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const id = form.querySelector('input[name="matricule"]').value.trim();
-      const names = form.querySelectorAll('input[name="nom"]');
-      const last = (names[0]?.value || '').trim();
-      const first = (names[1]?.value || '').trim();
-      if(!id || !last || !first){ alert('Fill ID, last and first name'); return; }
-      const student = { id, lastName: last, firstName: first, course: 'PAW' };
-      // add to table and localStorage
-      const r = createRow(student);
-      tbody.appendChild(r);
-      const arr = JSON.parse(localStorage.getItem("students") || "[]"); arr.push(student); localStorage.setItem("students", JSON.stringify(arr));
-      // confirmation
-      const msg = document.createElement('div'); msg.textContent = `✅ ${first} ${last} added`; msg.style.color='green'; msg.style.marginTop='8px'; form.insertAdjacentElement('afterend', msg); setTimeout(()=>msg.remove(),3000);
-      form.reset();
-    });
-  }
-
-  // -------------------- EXERCISE 4 : Show Report & Chart --------------------
-  // ajouter au HTML : <button id="showReport">Show Report</button>
-  // et <section id="reportSection" style="display:none"><div id="reportSummary"></div><canvas id="reportChart"></canvas></section>
-  const showBtn = document.getElementById('showReport');
-  const reportSection = document.getElementById('reportSection');
-  const reportSummary = document.getElementById('reportSummary');
-  const chartCanvas = document.getElementById('reportChart');
-  let reportChart = null;
-
-  function computeReport(){
-    const rows = Array.from(tbody.rows);
-    const totalStudents = rows.length;
-    // count students with at least one present box (consider present if presentCount>0)
-    let presentStudents = 0;
-    let participatedCount = 0; // total number of participation marks (or could be number of students who participated at least once)
-    rows.forEach(r=>{
-      const checkboxes = Array.from(r.querySelectorAll('input[type="checkbox"]'));
-      if(checkboxes.length===0) return;
-      // present count per row
-      let present = 0; let participated = 0;
-      checkboxes.forEach((cb,i)=>{ if(cb.checked){ if(i%2===0) present++; else participated++; }});
-      if(present>0) presentStudents++;
-      participatedCount += participated; // total participations
-    });
-    return { totalStudents, presentStudents, participatedCount };
-  }
-
-  function showReport(){
-    const data = computeReport();
-    if(reportSummary) reportSummary.innerHTML = `
-      <p><strong>Total students:</strong> ${data.totalStudents}</p>
-      <p><strong>Students marked present (at least 1 session):</strong> ${data.presentStudents}</p>
-      <p><strong>Total participation marks:</strong> ${data.participatedCount}</p>
-    `;
-    // draw chart: pie chart distribution present vs not present
-    const notPresent = data.totalStudents - data.presentStudents;
-    const chartData = { labels: ['Present (≥1)', 'Not present'], datasets: [{ data: [data.presentStudents, notPresent], backgroundColor: ['#36a2eb','#ffcd56'] }] };
-    if(reportChart) reportChart.destroy();
-    if(chartCanvas){
-      reportChart = new Chart(chartCanvas, { type: 'pie', data: chartData, options: { responsive: true } });
+// ================================================
+// 4️⃣ Recalculer à chaque clic sur un checkbox
+// ================================================
+document.addEventListener("change", (e) => {
+    if (e.target.type === "checkbox") {
+        calculateAttendance();
     }
-    if(reportSection) reportSection.style.display = 'block';
-  }
-
-  if(showBtn) showBtn.addEventListener('click', showReport);
-
-  // -------------------- EXERCISE 5 : jQuery hover + click --------------------
-  // Requires jQuery loaded on the page.
-  if(window.jQuery){
-    const $ = window.jQuery;
-    // highlight row on hover
-    $(tbody).on('mouseenter','tr', function(){ $(this).data('origBg', this.style.backgroundColor || ''); $(this).css('box-shadow','0 0 8px rgba(0,0,0,0.15)'); });
-    $(tbody).on('mouseleave','tr', function(){ $(this).css('box-shadow',''); $(this).css('background-color', $(this).data('origBg') || ''); });
-    // click row -> alert full name + absences
-    $(tbody).on('click','tr', function(e){
-      // avoid clicks when clicking on checkbox
-      if($(e.target).is('input')) return;
-      const name = $(this).find('td').eq(1).text() + ' ' + $(this).find('td').eq(2).text();
-      const abs = $(this).find('td').eq($(this).find('td').length - 3).text();
-      alert(`Student: ${name}\nAbsences: ${abs || '0'}`);
-    });
-  }
-
-  // -------------------- EXERCISE 6 : Highlight Excellent Students & Reset --------------------
-  // Buttons in HTML: <button id="highlightExcellent">Highlight Excellent Students</button> <button id="resetColors">Reset Colors</button>
-  const btnHighlight = document.getElementById('highlightExcellent');
-  const btnReset = document.getElementById('resetColors');
-
-  function highlightExcellent(){
-    const rows = Array.from(tbody.rows);
-    rows.forEach((r, idx)=>{
-      const absText = r.cells[r.cells.length - 3]?.textContent;
-      const abs = absText ? parseInt(absText,10) : 0;
-      if(abs < 3){
-        // animate using jQuery if present, else simple CSS pulse
-        if(window.jQuery){
-          $(r).fadeTo(300, 0.4).fadeTo(300, 1.0).fadeTo(300, 0.4).fadeTo(300,1.0);
-        } else {
-          r.style.transition = 'background-color 0.6s ease';
-          r.style.backgroundColor = '#b3ffb3';
-          setTimeout(()=> { r.style.backgroundColor = ''; }, 1200);
-        }
-      }
-    });
-  }
-  function resetColors(){
-    Array.from(tbody.rows).forEach(r => r.style.backgroundColor = '');
-    // re-run update to set colors again according to absences
-    Array.from(tbody.rows).forEach(r=> updateRow(r));
-  }
-
-  if(btnHighlight) btnHighlight.addEventListener('click', highlightExcellent);
-  if(btnReset) btnReset.addEventListener('click', resetColors);
-
 });
 </script>
+
+
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -419,6 +270,119 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 </script>
+
+<script>
+// ==========================
+// 5️⃣ SHOW REPORT + CHART
+// ==========================
+
+document.getElementById("showReport").addEventListener("click", function () {
+
+    const rows = document.querySelectorAll("#attendanceTable tbody tr");
+
+    let total = rows.length;
+    let totalPresent = 0;
+    let totalParticipated = 0;
+
+    rows.forEach(row => {
+        const checkboxes = row.querySelectorAll("input[type='checkbox']");
+        const attendance = Array.from(checkboxes).slice(0, 6);
+        const participation = Array.from(checkboxes).slice(6, 12);
+
+        totalPresent += attendance.filter(c => c.checked).length;
+        totalParticipated += participation.filter(c => c.checked).length;
+    });
+
+    document.getElementById("reportSection").style.display = "block";
+
+    document.getElementById("reportSummary").innerHTML = `
+        <p><b>Total students:</b> ${total}</p>
+        <p><b>Total presence checks:</b> ${totalPresent}</p>
+        <p><b>Total participation checks:</b> ${totalParticipated}</p>
+    `;
+
+    const ctx = document.getElementById("reportChart").getContext("2d");
+
+    if (window.myChart) window.myChart.destroy();
+
+    window.myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: ["Total Students", "Presence", "Participation"],
+            datasets: [{
+                label: "Attendance Report",
+                data: [total, totalPresent, totalParticipated]
+            }]
+        }
+    });
+});
+</script>
+<script>
+// ===============
+// 6️⃣ HIGHLIGHT + CLICK MESSAGE (jQuery)
+// ===============
+
+$(document).ready(function () {
+
+    // survol : highlight
+    $("#attendanceTable tbody tr").hover(
+        function () { 
+            $(this).css("background-color", "#d0e7ff"); 
+        },
+        function () { 
+            calculateAttendance(); // remet la couleur logique
+        }
+    );
+
+    // clique : afficher infos de l'étudiant
+    $("#attendanceTable tbody").on("click", "tr", function () {
+        let lastName = $(this).find("td:nth-child(2)").text();
+        let firstName = $(this).find("td:nth-child(3)").text();
+        let absences = $(this).find(".abs").text();
+
+        alert(`Student: ${firstName} ${lastName}\nAbsences: ${absences}`);
+    });
+
+});
+</script>
+<script>
+// =============================
+// 7️⃣ HIGHLIGHT EXCELLENT STUDENTS (jQuery)
+// =============================
+
+$(document).ready(function () {
+
+    // ---- 1) Highlight excellent students ----
+    $("#highlightExcellent").click(function () {
+
+        $("#attendanceTable tbody tr").each(function () {
+            let abs = parseInt($(this).find(".abs").text()) || 0;
+
+            // étudiants excellents : moins de 3 absences
+            if (abs < 3) {
+                // petite animation : fondu + couleur
+                $(this).css("transition", "background-color 0.6s ease");
+                $(this).fadeTo(300, 0.4)
+                       .fadeTo(300, 1.0)
+                       .css("background-color", "#b3ffb3"); // vert clair
+            }
+        });
+
+    });
+
+    // ---- 2) Reset Color ----
+    $("#resetColors").click(function () {
+        $("#attendanceTable tbody tr").each(function () {
+            $(this).css("background-color", "");
+        });
+
+        // remettre les couleurs normales selon les absences
+        calculateAttendance();
+    });
+
+});
+</script>
+
 
 
 </body>

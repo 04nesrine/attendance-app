@@ -27,7 +27,7 @@
         </div>          
     </header>
 
-        <form class="FORM">
+        <form class="FORM" action="add_student.php" method="POST">
             <fieldset class="ADD">
                 <legend><h2>ADD STUDENT:</h2></legend>
                     <span class="icon"><i class="fas fa-key"></i></span>
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return ok;
   }
 
-  // live validation
+  // live validationz
   [[inputMat, reNum, errMat], [inputLast, reLetters, errLast], [inputFirst, reLetters, errFirst], [inputEmail, reEmail, errEmail]]
     .forEach(([input, re, err])=>{
       if(!input) return;

@@ -334,3 +334,8 @@ footer {
     text-decoration: none;
 }
 
+.error {
+    color: red;
+    font-size: 13px;
+    padding-left: 25px;
+}
